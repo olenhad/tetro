@@ -161,16 +161,13 @@ public class State {
 	//constructor
 	public State() {
 		nextPiece = randomPiece();
-
+		System.out.println("From the State: first piece is: " + nextPiece);
 	}
 	
 	//random integer, returns 0-6
 	private int randomPiece() {
 		return (int)(Math.random()*N_PIECES);
 	}
-	
-
-
 	
 	//gives legal moves for 
 	public int[][] legalMoves() {
@@ -233,6 +230,7 @@ public class State {
 			//if the row was full - remove it and slide above stuff down
 			if(full) {
 				rowsCleared++;
+				System.out.println("New row cleared!! Total rows cleared: " + rowsCleared);
 				cleared++;
 				//for each column
 				for(int c = 0; c < COLS; c++) {
@@ -251,9 +249,8 @@ public class State {
 
 		//pick a new piece
 		nextPiece = randomPiece();
-		
-
-		
+		System.out.println("From the State: next piece is " + nextPiece);
+			
 		return true;
 	}
 	
