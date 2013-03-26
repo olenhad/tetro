@@ -22,7 +22,7 @@ public class State {
 	private int turn = 0;
 	private int cleared = 0;
 	
-	//each square in the grid - int means empty - other values mean the turn it was placed
+	//each square in the grid - int 0 means empty - other values mean the turn it was placed
 	private int[][] field = new int[ROWS][COLS];
 	//top row+1 of each column
 	//0 means empty
@@ -179,6 +179,7 @@ public class State {
 	
 	//make a move based on the move index - its order in the legalMoves list
 	public void makeMove(int move) {
+            System.out.println("legalmoves["+nextPiece+"].length= "+legalMoves[nextPiece].length);
 		makeMove(legalMoves[nextPiece][move]);
 	}
 	
