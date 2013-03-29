@@ -59,6 +59,7 @@ public class Features{
     	 */
     	
     	// "Learned Player"
+    	/**/
         weights = new double[] {
             1946.70,
             388.43,
@@ -71,6 +72,7 @@ public class Features{
             -22.02,
             -20.79
         };
+        /**/
     }
     public double[] getFeatures(State s, NextState n, int[] move) {
         evaluateFeatures(s, pastFeatures);
