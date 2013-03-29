@@ -29,7 +29,7 @@ public class Features{
     final private static int ROWS_CLEARED = count++;
     final private static int MAX_HEIGHT	= count++;
     final private static int DELTA_MAX_HEIGHT = count++;
-    final private static int COVERED_GAPS= count++;
+    final private static int COVERED_GAPS = count++;
     final private static int DELTA_COVERED_GAPS = count++;
     final private static int AVG_HEIGHT = count++;
     final private static int DELTA_AVG_HEIGHT = count++;
@@ -79,10 +79,10 @@ public class Features{
         evaluateFeatures(n, curFeatures);
         
         curFeatures[ROWS_CLEARED] = curFeatures[ROWS_CLEARED] - pastFeatures[ROWS_CLEARED];
-        curFeatures[DELTA_MAX_HEIGHT] = Math.abs(curFeatures[MAX_HEIGHT] - pastFeatures[MAX_HEIGHT]);
-        curFeatures[DELTA_COVERED_GAPS] = Math.abs(curFeatures[COVERED_GAPS] - pastFeatures[COVERED_GAPS]);
-        curFeatures[DELTA_AVG_HEIGHT] = Math.abs(curFeatures[AVG_HEIGHT] - pastFeatures[AVG_HEIGHT]);
-        curFeatures[DELTA_SUM_ABS_HEIGHT_DIFF] = Math.abs(curFeatures[SUM_ABS_HEIGHT_DIFF] - pastFeatures[SUM_ABS_HEIGHT_DIFF]);
+        curFeatures[DELTA_MAX_HEIGHT] = curFeatures[MAX_HEIGHT] - pastFeatures[MAX_HEIGHT];
+        curFeatures[DELTA_COVERED_GAPS] = curFeatures[COVERED_GAPS] - pastFeatures[COVERED_GAPS];
+        curFeatures[DELTA_AVG_HEIGHT] = curFeatures[AVG_HEIGHT] - pastFeatures[AVG_HEIGHT];
+        curFeatures[DELTA_SUM_ABS_HEIGHT_DIFF] = curFeatures[SUM_ABS_HEIGHT_DIFF] - pastFeatures[SUM_ABS_HEIGHT_DIFF];
         return curFeatures;
     }
     public double score(State s, NextState ns, int[] move) {
