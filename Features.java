@@ -77,7 +77,8 @@ public class Features{
     public double[] getFeatures(State s, NextState n, int[] move) {
         evaluateFeatures(s, pastFeatures);
         evaluateFeatures(n, curFeatures);
-
+        
+        curFeatures[ROWS_CLEARED] = curFeatures[ROWS_CLEARED] - pastFeatures[ROWS_CLEARED];
         curFeatures[DELTA_MAX_HEIGHT] = Math.abs(curFeatures[MAX_HEIGHT] - pastFeatures[MAX_HEIGHT]);
         curFeatures[DELTA_COVERED_GAPS] = Math.abs(curFeatures[COVERED_GAPS] - pastFeatures[COVERED_GAPS]);
         curFeatures[DELTA_AVG_HEIGHT] = Math.abs(curFeatures[AVG_HEIGHT] - pastFeatures[AVG_HEIGHT]);

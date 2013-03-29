@@ -1,12 +1,12 @@
 import java.util.*;
 
 public class StatisticGenerator{
-	public final static int SAMPLE_SIZE = 500;
+	public final static int SAMPLE_SIZE = 100;
 	
 	public static void main(String[] args){
 		int[] scoreList = new int[SAMPLE_SIZE];
 		double avgScore = 0;
-		double stdDevScore = 0;
+		double varScore = 0;
 		
 		for(int i = 0; i < SAMPLE_SIZE; i++){
 			State s = new State();
@@ -25,17 +25,21 @@ public class StatisticGenerator{
 			
 			scoreList[i] = s.getRowsCleared();
 			avgScore += scoreList[i];
-			System.out.println("Iteration " + i + ": " + scoreList[i]);
+			System.out.println("Iteration " + (i+1) + ": " + scoreList[i]);
 		}
+		
+		System.out.println();
 		
 		avgScore = avgScore / (SAMPLE_SIZE * 1.0);
 		
 		for(int i = 0; i < SAMPLE_SIZE; i++){
-			stdDevScore += (scoreList[i] - avgScore)*(scoreList[i] - avgScore)*1.0;
+			varScore += (scoreList[i] - avgScore)*(scoreList[i] - avgScore)*1.0;
 		}
 		
-		stdDevScore = stdDevScore/SAMPLE_SIZE*1.0;
+		varScore = varScore/SAMPLE_SIZE*1.0;
 		
-		System.out.println("Average: " + avgScore + '\n' + "Std Dev: " + stdDevScore + '\n');
+		System.out.println("Average: " + avgScore);
+		System.out.println("Variance: " + varScore);
+		System.out.println("Std dev: " + Math.sqrt(varScore));
 	}
 }
