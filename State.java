@@ -22,7 +22,7 @@ public class State {
 	private int turn = 0;
 	private int cleared = 0;
 	
-	//each square in the grid - 0 means empty - other values mean the turn it was placed
+	//each square in the grid - int means empty - other values mean the turn it was placed
 	private int[][] field = new int[ROWS][COLS];
 	//top row+1 of each column
 	//0 means empty
@@ -167,6 +167,7 @@ public class State {
 	//random integer, returns 0-6
 	private int randomPiece() {
 		return (int)(Math.random()*N_PIECES);
+		//return 3;
 	}
 	
 
