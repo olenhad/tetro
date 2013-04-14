@@ -6,6 +6,7 @@ public class PlayerSkeleton {
     double[] prevFeautures;
     private Features featureFn;
     private NextState ns = null;
+    private static double[] testW = new double[] {-7.720365371906888, 5.940915554719386, -0.12124613960138278, 0.27983173173592785, -2.477321983110656, -7.227672112968805, -0.14518808292558213, 3.1585370155208734, -1.1860124403007994, -0.7243385364234114};
 
     public PlayerSkeleton(){
     	featureFn = new Features();
@@ -47,13 +48,13 @@ public class PlayerSkeleton {
 	public static void main(String[] args) {
 		State s = new State();
 		new TFrame(s);
-		PlayerSkeleton p = new PlayerSkeleton();
+		PlayerSkeleton p = new PlayerSkeleton(testW);
 		while(!s.hasLost()) {
 			s.makeMove(p.pickMove(s,s.legalMoves()));
 			s.draw();
 			s.drawNext(0,0);
 			try {
-				Thread.sleep(0);
+				Thread.sleep(350);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
