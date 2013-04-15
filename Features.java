@@ -20,10 +20,10 @@ public class Features{
     double[] weights = new double[NUMBER_FEATURES];
     {
         weights = new double[] {
+            -0.1,
             -0.5,
-            -1.0,
             17,
-            -0.2,
+            -0.1,
             -1.0
         };
     }
