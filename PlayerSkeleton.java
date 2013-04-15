@@ -1,5 +1,7 @@
 
+
 import java.util.*;
+
 public class PlayerSkeleton {
 
     double[] curFeatures = new double[Features.NUMBER_FEATURES];
@@ -53,11 +55,11 @@ public class PlayerSkeleton {
 			s.makeMove(p.pickMove(s,s.legalMoves()));
 			s.draw();
 			s.drawNext(0,0);
-			try {
-				Thread.sleep(350);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+		//	try {
+				//Thread.sleep(1);
+		//	} catch (InterruptedException e) {
+		//		e.printStackTrace();
+		//	}
 		}
 		System.out.println("You have completed "+s.getRowsCleared()+" rows.");
 	}
