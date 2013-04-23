@@ -5,6 +5,10 @@ player:
 stats:
 	javac *.java
 	java StatisticGenerator
-	
+
+breeder:
+	javac *.java
+	java Breeder
+
 clean:
 	rm *.class

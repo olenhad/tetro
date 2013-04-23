@@ -21,7 +21,7 @@ public class StatisticGenerator{
 
 		for(int i = 0; i < SAMPLE_SIZE; i++){
 			State s = new State();
-			PlayerSkeleton p = new PlayerSkeleton(w);
+			PlayerSkeleton p = new PlayerSkeleton();
 			while(!s.hasLost()) {
 				s.makeMove(p.pickMove(s,s.legalMoves()));
 			}
